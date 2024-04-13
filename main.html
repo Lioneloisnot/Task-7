@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+    <title>Тетрис</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: black;
+        color: white;
+        display: flex;
+
+        justify-content: space-evenly;
+      }
+      canvas {
+        border: 1px solid white;
+      }
+      .info {
+        width: 350px;
+        height: 100vh;
+      }
+      p {
+        margin-top: 60px;
+        line-height: 30px;
+      }
+      .info_player {
+        margin-top: 25px;
+      }
+      .player{
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="info">
+      <div class="info_player">
+        <span>Игрок:</span><span id="username" class="player"></span>
+      </div>
+      <p>
+        <strong>Клавиши для управления:</strong> <br />
+        Стрелка влево - перемещение фигуры влево <br />
+        Стрелка вправо - перемещение фигуры вправо <br />
+        Стрелка вниз - ускорить фигуру <br />
+        Стрелка вверх - повернуть фигуру
+      </p>
+    </div>
+    <canvas width="320" height="640" id="game"></canvas>
+    <script src="script.js"></script>
+    </script>
+    <script>
+      window.onload = function() {
+          var name = localStorage.getItem('username');
+          document.getElementById('username').textContent = name;
+      }
+  </script>
+  </body>
+</html>
